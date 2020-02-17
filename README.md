@@ -1,2 +1,2 @@
 # Drawer
-A user-friendly, light and reliable cloud POS
+A user-friendly, light and reliable sales software
