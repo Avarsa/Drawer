@@ -1,0 +1,20 @@
+
+{% macro grid(content) %}
+<div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner row">
+
+    {% for item in content %}
+      <div class="mdc-layout-grid__cell">
+
+        {{item}}
+     
+        </div>
+     {% endfor %}
+      
+
+
+  </div>
+
+</div>
+
+{% endmacro %}

@@ -1,0 +1,191 @@
+//$mdc-theme-primary: #0d547c;
+//$mdc-theme-secondary: #7c320d;
+//$mdc-theme-primary: #2A6C65;
+//$mdc-theme-secondary: #6c2a31;
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+$mdc-typography-font-family: unquote("Roboto, sans-serif");
+
+
+@media print {
+  *{  transition: none !important }
+}
+
+$mdc-theme-primary: #043376;
+$mdc-theme-secondary:  #047646;
+
+
+@import "@material/animation/functions";
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/icon-button/mdc-icon-button";
+@import "@material/drawer/mdc-drawer";
+@import "@material/list/mdc-list";
+@import "@material/dialog/mdc-dialog";
+@import "@material/layout-grid/mdc-layout-grid";
+@import "@material/card/mdc-card";
+@import "@material/button/mdc-button";
+@import "@material/typography/mdc-typography";
+@import "@material/tab-bar/mdc-tab-bar";
+@import "@material/tab-scroller/mdc-tab-scroller";
+@import "@material/tab-indicator/mdc-tab-indicator";
+@import "@material/tab/mdc-tab";
+@import "@material/textfield/mdc-text-field";
+@import "@material/elevation/mdc-elevation";
+@import "@material/fab/mdc-fab";
+@import "@material/data-table/mdc-data-table";
+@import "@material/chips/mdc-chips";
+@import "@material/ripple/mdc-ripple";
+@import "@material/radio/mdc-radio";
+
+
+
+
+
+
+$barColor: white;
+$iconColor: #043376;
+$inkColor: #043376;
+$textFieldHeight: 40px;
+
+.table {
+	padding: 16px;
+	height: 83vh;
+	
+}
+
+.payment {
+	display: none;
+}
+
+.mdc-top-app-bar{
+@include mdc-top-app-bar-fill-color($barColor);
+@include mdc-top-app-bar-icon-ink-color($iconColor);
+@include mdc-top-app-bar-ink-color($inkColor);
+}
+
+::-webkit-scrollbar {
+  width: 1.5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #c0e4d0; 
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #043376; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
+.mdc-text-field {
+	@include mdc-text-field-height($textFieldHeight);
+
+}
+
+@keyframes fade-in {
+  from {
+    transform: translateY(-80px);
+    opacity: 0;
+    background-color: yellow;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    background-color: white;
+  }
+}
+
+
+@keyframes subtle-fade-in {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+   
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    
+  }
+}
+
+
+
+
+
+.text_field {
+	width: 100%;
+}
+
+
+
+.mdc-card {
+  animation: mdc-animation-enter(/* $name: */ fade-in, /* $duration: */ 1500ms);
+}
+
+
+.order_buttons {
+	display: none;
+}
+  
+
+
+.kot, .payment_content, .order_buttons {
+
+	animation: mdc-animation-enter(/* $name: */ subtle-fade-in, /* $duration: */ 1500ms);
+	
+}
+
+
+
+.mdc-text-field {
+
+  animation: mdc-animation-enter(/* $name: */ fade-in, /* $duration: */ 1000ms);
+
+  
+
+}
+
+.order_content {
+	display: none;
+	
+}
+
+
+.table_content {
+
+	overflow: auto;
+}
+
+.payment_content, .kot {
+	display: none;
+}
+
+
+.font_color_secondary {
+	color: $mdc-theme-secondary;
+}
+
+.mdc-data-table {
+	width: 95%;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+table td {
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
+}
+
+
+.identifier_content {
+	display: inline-flex;
+}

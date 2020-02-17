@@ -1,0 +1,30 @@
+  
+
+{% macro tab(method="", icon="", text="", active='False') %}
+
+
+
+  <button onclick = "{{method}}" class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                      <span class="mdc-tab__content">
+                        <span class="mdc-tab__icon material-icons" aria-hidden="true">
+                        {{icon}}
+                        </span>
+                        <span class="mdc-tab__text-label">
+                          {{text}}
+                        </span>
+                      </span>
+                      
+                      <span class="mdc-tab-indicator 
+                      {% if active=='True' %}
+                      {{'mdc-tab-indicator--active'}}
+                      {% endif %}">
+                      
+                        <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline">
+                          
+                        </span>
+                      </span>
+                      <span class="mdc-tab__ripple"></span>
+                    </button>
+
+
+{% endmacro %}

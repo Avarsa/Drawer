@@ -1,0 +1,96 @@
+{% import 'grid.html' as grid %}
+{% import 'card.html' as card %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drawer POS</title>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
+
+  <!-- normalize.css -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+
+  <!-- material icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/app.css') }}">
+
+  <style type="text/css">
+    .my-card-content {
+      padding: 16px;
+    }
+  </style>
+
+</head>
+<body>
+
+<body>
+
+  {% include 'header.html' %}
+
+  {% include 'drawer-aside.html' %}
+
+<!-- main content -->
+
+<div class="mdc-top-app-bar--fixed-adjust">
+
+ 
+
+  {{grid.grid(content=[card])}}
+  
+
+  
+  <script type="text/javascript">
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/static/service-worker.js');
+        });
+      }
+  </script>
+  <script src="static/js/bundle.js" async>
+
+  </script>
+
+  <script type="text/javascript">
+
+
+    function print_view_kot(obj) {
+
+      var card = obj.closest('.mdc-card');
+
+      var prtContent = card.querySelector(".kot");
+      var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
+      WinPrint.document.write('<link rel="stylesheet" type="text/css" href="{{ url_for("static", filename="css/app.css") }}">');
+      WinPrint.document.write('<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">');
+
+//Wrapping in setTimeout() because of a glitch in chrome browser; it won't display the content with css when there is a change in the DOM
+//Also, don't toggle between DevTools F12. The content disappears
+      setTimeout(function(){
+
+        WinPrint.document.write(prtContent.innerHTML);
+        WinPrint.document.write('<button class="mdc-fab mdc-fab"> <span class="mdc-fab__icon material-icons">print</span></button>');
+        WinPrint.document.close();
+        WinPrint.focus();
+
+
+      }, 200);
+
+
+}
+   
+
+    
+
+      
+
+  
+
+  </script>
+  
+</body>
+
+</body>
+</html>

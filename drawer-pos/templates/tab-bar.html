@@ -1,0 +1,30 @@
+<div class="mdc-tab-bar" role="tablist">
+
+    <div class="mdc-tab-scroller">
+
+        <div class="mdc-tab-scroller__scroll-area">
+
+                  
+
+            <div class="mdc-tab-scroller__scroll-content">
+
+
+                    {% import 'mdc-tab.html' as mdcTab %}
+
+                    {{mdcTab.tab(method='indentifier(this)', icon='person', active='True')}}
+
+                    {{mdcTab.tab(method='order(this)', icon='fastfood')}}
+
+                    {{mdcTab.tab(method='payment(this)', icon='payment')}}
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
